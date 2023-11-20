@@ -27,11 +27,11 @@ public class SD02_AddCourseTestSteps extends TestBase {
     public void user_clicks_on_add_course_button() {
         coursesPage.clickOnAddCourseButton();
     }
-    @When("user fills course info {string} {string} {int}")
-    public void user_fills_course_info(String courseName, String gradeValue, Integer teacherIndex) {
+    @When("user fills course info {string} {string}")
+    public void user_fills_course_info(String courseName, String gradeValue) {
         addCoursePage.enterCourseName(courseName);
         addCoursePage.selectGrade(gradeValue);
-        addCoursePage.selectTeacher(teacherIndex);
+        addCoursePage.selectTeacher();
     }
     @When("user clicks on create button")
     public void user_clicks_on_create_button() {

@@ -8,11 +8,11 @@ public class AdminstrationPage extends PageBase{
         super(driver);
     }
     By coursesListLink = By.id("btnMyCoursesList");
-    By pageTitle = By.id("lblTenantDisplayName");
+    By pageTitleText = By.id("lblTenantDisplayName");
     public void clickOnCourses(){
         clickOnElement(coursesListLink);
     }
-    public String getPageTitle(){
-        return getElementText(pageTitle);
+    public String getPageTitleText(){
+        return getElementText(pageTitleText);
     }
 }

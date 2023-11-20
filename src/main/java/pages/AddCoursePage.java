@@ -10,6 +10,7 @@ public class AddCoursePage extends PageBase{
     By courseNameTextField = By.id("txtCourseName");
     By courseGradesList = By.id("courseGrade");
     By teacherslist = By.id("teacherOnBehalf");
+    By teacherNameFromList = By.cssSelector("h5[title='nada rehan']");
     By createCourseButton = By.id("btnSaveAsDraftCourse");
     By successMessage = By.cssSelector("div.result");
     public void enterCourseName(String courseName){
@@ -18,8 +19,9 @@ public class AddCoursePage extends PageBase{
     public void selectGrade(String gradeValue){
         selectFromDropDownByValue(courseGradesList,gradeValue);
     }
-    public void selectTeacher(int teacherIndex){
-        selectFromDropDownByIndex(teacherslist,teacherIndex);
+    public void selectTeacher( ){
+        clickOnElement(teacherslist);
+        clickOnElement(teacherNameFromList);
     }
     public void clickOnCreateButton(){
         clickOnElement(createCourseButton);

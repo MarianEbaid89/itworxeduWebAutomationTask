@@ -1,7 +1,6 @@
 package steps;
 
 import base.TestBase;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -30,7 +29,7 @@ public class SD01_LoginTestSteps extends TestBase {
     }
     @Then("user login successfully")
     public void user_login_successfully() {
-        Assert.assertEquals(adminstrationPage.getPageTitle(),"Institute Management");
+        Assert.assertEquals(adminstrationPage.getPageTitleText(),"Institute Management");
     }
 
 
