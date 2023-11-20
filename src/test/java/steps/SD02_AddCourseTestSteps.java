@@ -4,6 +4,7 @@ import base.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 import pages.AddCoursePage;
 import pages.AdminstrationPage;
 import pages.CoursesPage;
@@ -41,6 +42,10 @@ public class SD02_AddCourseTestSteps extends TestBase {
     public void a_new_course_should_added_successfully(String courseName) {
         adminstrationPage.clickOnCourses();
         coursesPage.setSearchCourseTextField(courseName);
+
+        for (int i = 0; i<coursesPage.getCoursesTitleText().size(); i++){
+            Assert.assertEquals(coursesPage.getCoursesTitleText().get(i),courseName);
+        }
     }
 
 }

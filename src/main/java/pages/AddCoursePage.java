@@ -12,7 +12,7 @@ public class AddCoursePage extends PageBase{
     By teacherslist = By.id("teacherOnBehalf");
     By teacherNameFromList = By.cssSelector("h5[title='nada rehan']");
     By createCourseButton = By.id("btnSaveAsDraftCourse");
-    By successMessage = By.cssSelector("div.result");
+
     public void enterCourseName(String courseName){
         setElementText(courseNameTextField,courseName);
     }
@@ -25,9 +25,6 @@ public class AddCoursePage extends PageBase{
     }
     public void clickOnCreateButton(){
         clickOnElement(createCourseButton);
-    }
-    public String getSuccessMessage(){
-        return getElementText(successMessage);
     }
 
 

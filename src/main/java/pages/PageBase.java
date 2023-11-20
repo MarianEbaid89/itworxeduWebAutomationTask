@@ -56,12 +56,7 @@ public class PageBase {
         Select drpDays = new Select(driver.findElement(elementLocator));
         drpDays.selectByValue(selection);
     }
-    public void selectFromDropDownByVisibleText(By elementLocator, String selectionText){
-        waitPresenceOfElement(elementLocator);
-        scrollToElementView(elementLocator);
-        Select drpDays = new Select(driver.findElement(elementLocator));
-        drpDays.selectByVisibleText(selectionText);
-    }
+
     public boolean isElementDisplayed(By elementLocator){
         waitPresenceOfElement(elementLocator);
         return driver.findElement(elementLocator).isDisplayed();
@@ -74,15 +69,12 @@ public class PageBase {
     public List<WebElement> findElementsList(By elementLocator){
         return  driver.findElements(elementLocator);
     }
-    public List <String> getWindowTabs (){
-        List <String> tabs = new ArrayList<>(driver.getWindowHandles());
-        return tabs;
-    }
 
-    public String getElementValue (By elementLocator){
+    public void submitElement (By elementLocator){
         waitPresenceOfElement(elementLocator);
         scrollToElementView(elementLocator);
-        return driver.findElement(elementLocator).getAttribute("value");
+        driver.findElement(elementLocator).submit();
     }
+
 
 }
